@@ -49,7 +49,6 @@ const charts = {
   },
 
   fillChart(data) {
-    console.log(data);
     // Get the maximum amount to later set bar's heights proportionnaly
     let maxAmount = 0;
     for (dayData of data) {
@@ -71,12 +70,11 @@ const charts = {
 
   init() {
     charts.chartTableElem = document.getElementById('chart-table');
-    fetch("../data.json")
+    fetch("data.json")
       .then(response => response.json())
       .then(json => {
         charts.fillChart(json);
       });
-    charts.createAmountTooltip()
   }
 }
 

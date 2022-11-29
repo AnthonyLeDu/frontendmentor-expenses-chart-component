@@ -1,43 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Fraunces:opsz,wght@9..144,700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+
+
   <title>Frontend Mentor | Expenses chart component</title>
+  <script src="js/charts.js"></script>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
+
 <body>
+  <main>
+    <div class="balance">
+      <div class="balance-text">
+        <p class="balance-text__title">My balance</p>
+        <p class="balance-text__amount">$921.48</p>
+      </div>
+      <img class="balance-logo" src="images/logo.svg" alt="logo">
+    </div>
 
-  My balance
-  $921.48
+    <div class="chart">
+      <h1>Spending - Last 7 days</h1>
+      <div id="chart-table">
+      </div>
+      <hr>
+      <div class="sum-up">
+        <div class="sum-up-total">
+          <p>Total this month</p>
+          <p class="sum-up_total__number">$478.33</p>
+        </div>
+        <div class="sum-up-progression">
+          <p class="sum-up_progression__number">+2.4%</p>
+          <p>from last month</p>
+        </div>
+      </div>
+    </div>
+  </main>
 
-  Spending - Last 7 days
-
-  mon
-  tue
-  wed
-  thu
-  fri
-  sat
-  sun
-
-  Total this month
-  $478.33
-
-  +2.4%
-  from last month
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://github.com/AnthonyLeDu">Anthony Le Du</a>.
+  </footer>
 </body>
+
 </html>

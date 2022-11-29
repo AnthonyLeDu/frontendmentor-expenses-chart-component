@@ -1,0 +1,221 @@
+:root {
+  --main-brown: hsl(25, 47%, 15%);
+}
+
+body {
+  font-family: DM Sans;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background-color: hsl(27, 66%, 92%);
+  font-size: 15px;
+}
+
+main {
+  width: 343px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.1em;
+}
+
+h1 {
+  color: var(--main-brown);
+  font-size: 1.6em;
+  font-weight: bold;
+  margin: 0.6rem 0 2rem;
+}
+
+.balance,
+.chart {
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.balance {
+  background-color: hsl(10, 79%, 65%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: hsl(27, 66%, 92%);
+  height: 57px;
+}
+
+.balance-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.7rem;
+  height: 100%;
+}
+
+.balance-text__amount {
+  font-size: 1.6em;
+  font-weight: bold;
+}
+
+.balance-logo {
+  height: 70%;
+}
+
+
+.chart {
+  background-color: hsl(33, 100%, 98%);
+}
+
+#chart-table {
+  display: flex;
+  gap: 0.8em;
+  justify-content: space-between;
+  margin-top: 3.5rem;
+}
+
+.single-day {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-start;
+  gap: 12px;
+  flex-basis: 100vw;
+  /*Making sure all bars have the same width */
+}
+
+.single-day-bar-container {
+  height: 150px;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.single-day-bar-container__bar {
+  background-color: hsl(10, 79%, 65%);
+  border-radius: 0.3em;
+  transform-origin: bottom;
+  animation: 0.5s ease-out 0s 1 growVertically;
+  position: relative;
+}
+
+.single-day-bar-container__bar:hover {
+  background-color: #ff9b87;
+}
+
+.single-day-bar-container__bar--current {
+  background-color: hsl(186, 34%, 60%);
+}
+
+.single-day-bar-container__bar--current:hover {
+  background-color: #b4dfe5;
+}
+
+.single-day-bar-container__amount {
+  visibility: hidden;
+  background-color: hsl(25, 47%, 15%);
+  color: hsl(27, 66%, 92%);
+  border-radius: 0.3em;
+  height: 1.5em;
+  padding: 0.2em 0;
+  width: 130%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -2.5em;
+  left: -15%;
+}
+
+.single-day__title {
+  font-size: 0.8em;
+  color: hsl(28, 10%, 53%);
+  text-align: center;
+}
+
+hr {
+  border-color: hsl(27, 66%, 92%);
+  opacity: 50%;
+  margin: 1.8rem 0;
+}
+
+.sum-up {
+  display: flex;
+  justify-content: space-between;
+  color: hsl(28, 10%, 53%);
+}
+
+.sum-up_total__number {
+  color: var(--main-brown);
+  font-size: 2em;
+  font-weight: bold;
+  margin: 0.7rem 0;
+}
+
+.sum-up-progression {
+  text-align: end;
+  align-self: flex-end;
+  margin-bottom: 0.5em;
+}
+
+.sum-up_progression__number {
+  font-weight: bold;
+  color: var(--main-brown);
+  margin-bottom: 0.3em;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+
+@keyframes growVertically {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(100%);
+  }
+}
+
+@keyframes smoothApparition {
+  from {
+    transform: scale(80%) translateY(50%);
+    opacity: 0;
+  }
+  to {
+    transform: scale(100%) translateY(0);
+    opacity: 1;
+  }
+}
+
+
+@media (min-width: 600px) {
+  body {
+    font-size: 18px;
+  }
+
+  main {
+    width: 540px;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+
+  .balance,
+  .chart {
+    padding: 35px;
+    border-radius: 20px;
+  }
+
+  .balance-logo {
+    height: 80%;
+  }
+
+  .sum-up_total__number {
+    font-size: 2.6em;
+  }
+}

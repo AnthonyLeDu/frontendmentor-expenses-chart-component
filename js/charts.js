@@ -56,7 +56,8 @@ const charts = {
     }
     // Get the current day
     const d = new Date();
-    let dayIndex = d.getDay();
+    let dayIndex = d.getDay() - 1;
+    if (dayIndex < 0) {dayIndex = 6;} // getDay starts on Sunday
     // Generate the chart bars
     for (let i = 0; i < data.length; i++) {
       charts.addDayElement(
